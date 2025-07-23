@@ -131,17 +131,21 @@ class _EmployeeDataFormScreenState extends State<EmployeeDataFormScreen> {
                   return Card(
                     child: ListTile(
                       title: Text(empList[index].empName.toString()),
+                      subtitle: Text(empList[index].empDob.toString()),
                     ),
                   );
                 },
               ),
-              WidedButtonWidget(onPress: () {
-                EmployeeDb.instance.readAllEmployee().then((value) {
-                  setState(() {
-                    empList = value;
+              WidedButtonWidget(
+                onPress: () {
+                  EmployeeDb.instance.readAllEmployee().then((value) {
+                    setState(() {
+                      empList = value;
+                    });
                   });
-                });
-              }, text: 'Read'),
+                },
+                text: 'Read',
+              ),
             ],
           ),
         ),

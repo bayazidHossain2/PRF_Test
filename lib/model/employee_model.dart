@@ -10,11 +10,12 @@ class EmployeeModel {
 
   // Factory constructor to create an instance from JSON
   factory EmployeeModel.fromJson(Map<String, dynamic> json) {
+    print(json);
     return EmployeeModel(
-      empId: json[EmployeeFields.empId.toLowerCase()],
-      empName: json[EmployeeFields.empName.toLowerCase()],
-      empGender: json[EmployeeFields.empGender.toLowerCase()],
-      empDob: json[EmployeeFields.empDob.toLowerCase()],
+      empId: json[EmployeeFields.empId],
+      empName: json[EmployeeFields.empName],
+      empGender: json[EmployeeFields.empGender],
+      empDob: json[EmployeeFields.empDob],
     );
   }
 
